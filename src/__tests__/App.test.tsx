@@ -1,11 +1,9 @@
 import React from "react";
-import nock from "nock";
 import { render } from "@testing-library/react";
 
 import App from "App";
 import { User } from "types/User";
-
-const api = nock(process.env.REACT_APP_API_URL);
+import { mockApi } from "shared/test/mockApi";
 
 describe("<App />", () => {
   const users: User[] = [
@@ -24,11 +22,11 @@ describe("<App />", () => {
   ];
 
   it("fetches and renders a list of users", async () => {
-    api.get("/users").reply(200, users);
+    mockApi().get("/users").reply(200, users);
 
     const { findByText } = render(<App />);
 
-    await findByText(users[0].name);
-    await findByText(users[1].name);
+    await findByText("User 1 (@user1)");
+    await findByText("User 2 (@user2)");
   });
 });
