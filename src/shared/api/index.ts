@@ -1,1 +1,2 @@
-export { api } from "./withFetch";
+export { api as axiosApi } from "./withAxios";
+export { api as fetchApi } from "./withFetch";
