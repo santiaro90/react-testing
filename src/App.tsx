@@ -1,6 +1,7 @@
 import React from "react";
 
-import { UsersWithState } from "pages/UsersWithState";
+import { UsersWithRedux } from "pages/UsersWithRedux";
+// import { UsersWithState } from "pages/UsersWithState";
 import logo from "./logo.svg";
 
 import "./App.css";
@@ -11,7 +12,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <UsersWithState />
+        <UsersWithRedux />
+        {/* <UsersWithState /> */}
       </header>
     </div>
   );

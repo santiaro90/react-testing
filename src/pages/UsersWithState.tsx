@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { SFC, useEffect, useState } from "react";
 
-import { Users } from "components/Users/Users";
 import { User } from "types/User";
-import { axiosApi as api } from "shared/api";
+import { Users } from "components/Users";
+import { api } from "shared/api";
 
-export const UsersWithState = () => {
+export const UsersWithState: SFC<{}> = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   useEffect(() => {

@@ -1,9 +1,10 @@
 import React from "react";
-import { render } from "@testing-library/react";
+// import { render } from "@testing-library/react";
 
 import App from "App";
 import { User } from "types/User";
 import { mockApi } from "shared/test/mockApi";
+import { render } from "shared/test/render";
 
 describe("<App />", () => {
   const users: User[] = [
