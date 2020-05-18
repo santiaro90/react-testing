@@ -1,10 +1,10 @@
 import React, { SFC, useEffect } from "react";
+import { Users } from "components/Users";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AppState } from "types/AppState";
 import { User } from "types/User";
-import { Users } from "components/Users";
-import { getUsers } from "shared/store/actions";
+import { getUsers } from "shared/store/users";
 
 export const UsersWithRedux: SFC<{}> = () => {
   const dispatch = useDispatch();

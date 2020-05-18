@@ -1,16 +1,12 @@
-import { User } from "./User";
 import { Action } from "redux";
+import { ThunkAction } from "redux-thunk";
+
+import { User } from "./User";
 
 export type UsersState = User[];
-
-export enum UsersActions {
-  SetUsers = "SET_USERS",
-}
-
-export interface SetUsersAction extends Action<UsersActions.SetUsers> {
-  payload: User[];
-}
 
 export interface AppState {
   readonly users: UsersState;
 }
+
+export type AppThunk = ThunkAction<void, AppState, unknown, Action<string>>;
