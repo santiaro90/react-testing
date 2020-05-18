@@ -1,7 +1,5 @@
-import { configureStore, Store } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
-import { AppState } from "types/AppState";
 import { rootReducer } from "./rootReducer";
 
-export const createStore = (): Store<AppState> =>
-  configureStore({ reducer: rootReducer });
+export const createStore = () => configureStore({ reducer: rootReducer });
