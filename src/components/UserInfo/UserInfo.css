@@ -1,0 +1,15 @@
+.UserInfo {
+  margin: 1rem 0;
+}
+
+.UserInfo::before {
+  display: none;
+}
+
+.UserInfo-content {
+  display: inline-block;
+}
+
+.UserInfo-icon {
+  vertical-align: top !important;
+}
