@@ -2,7 +2,7 @@ import React, { SFC } from "react";
 import { List } from "semantic-ui-react";
 
 import { User } from "types/User";
-import { UserInfo } from "components/UserInfo/UserInfo";
+import { UserInfo } from "components/UserInfo";
 
 import "./Users.css";
 

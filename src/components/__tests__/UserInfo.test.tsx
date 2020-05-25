@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import { UserInfo } from "components/UserInfo/UserInfo";
+import { UserInfo } from "../UserInfo";
 import { User } from "types/User";
 
 describe("<UserInfo />", () => {

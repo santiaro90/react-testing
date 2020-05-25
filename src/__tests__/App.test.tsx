@@ -1,23 +1,34 @@
 import React from "react";
-// import { render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import App from "App";
 import { User } from "types/User";
 import { mockApi } from "shared/test/mockApi";
-import { render } from "shared/test/render";
 
 describe("<App />", () => {
   const users: User[] = [
     {
-      name: "User 1",
-      email: "user1@example.com",
-      username: "user1",
+      name: "Steve",
+      email: "steve@example.com",
+      username: "steve",
       address: null,
     },
     {
-      name: "User 2",
-      email: "user2@example.com",
-      username: "user2",
+      name: "Tony",
+      email: "tony@example.com",
+      username: "tony",
+      address: null,
+    },
+    {
+      name: "Sam",
+      email: "sam@example.com",
+      username: "sam",
+      address: null,
+    },
+    {
+      name: "Santiago",
+      email: "santiago@example.com",
+      username: "santiago",
       address: null,
     },
   ];
@@ -27,7 +38,9 @@ describe("<App />", () => {
 
     const { findByText } = render(<App />);
 
-    await findByText("User 1 (@user1)");
-    await findByText("User 2 (@user2)");
+    await findByText("Steve (@steve)");
+    await findByText("Tony (@tony)");
+    await findByText("Sam (@sam)");
+    await findByText("Santiago (@santiago)");
   });
 });
