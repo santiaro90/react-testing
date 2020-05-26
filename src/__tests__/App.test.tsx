@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { render, wait } from "@testing-library/react";
 
 import App from "App";
 import { User } from "types/User";
@@ -42,5 +43,20 @@ describe("<App />", () => {
     await findByText("Tony (@tony)");
     await findByText("Sam (@sam)");
     await findByText("Santiago (@santiago)");
+  });
+
+  it("filters users by name", async () => {
+    mockApi().get("/users").reply(200, users);
+
+    const { queryByText, findByText, getByPlaceholderText } = render(<App />);
+    await findByText("Steve (@steve)");
+
+    const searchBox = getByPlaceholderText("Search...");
+    await userEvent.type(searchBox, "To");
+
+    await wait(() => {
+      expect(queryByText("Tony (@tony)")).toBeInTheDocument();
+      expect(queryByText("Santiago (@santiago)")).not.toBeInTheDocument();
+    });
   });
 });
